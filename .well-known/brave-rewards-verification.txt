@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: 5jiji.github.io
-Token: 46df5e481aae36e4e77834ba923f5af6111508f755e4e39f3093300e43ce53ee
