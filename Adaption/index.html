@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Adaptation du problème</title>
+  <link rel="icon" href="https://c.tenor.com/fv45doRJoWgAAAAi/discord-nitro-op.gif">
+  <style>
+    body {
+      background-color: black;
+      text-align: center;
+    }
+
+    p, h1, h2 {
+      color: white;
+      font-family: ubuntu;
+    }
+
+    .submit {
+      align-content: center;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    button {
+      padding: 0.3rem;
+      font-size: 1rem;
+      margin-left: 4px;
+      background-color: rgb(0, 200, 0);
+      border: 1px solid black;
+    }
+
+    .green {
+      color: rgb(0, 200, 0)
+    }
+
+    .red {
+      color: red
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Adaptation du problème</h1>
+  <h2 class="code">Code: 0000</h3>
+    <p class="p_password">Mots de passe : <input type="number" id='password' class='password' min='1000' max="9999">
+      <button class="submit" id="submit">Submit</button></p>
+    <button class="restart hidden">Restart</button>
+    <p class="info">Vous avez 3 chance pour mettre le bon résultat</p>
+    <img class="orange" src="Assets/orange.jpg">
+    <img class="green hidden" src="Assets/vert.jpg">
+    <img class="red hidden" src="Assets/rouge.jpg">
+    <script src="script.js"></script>
+</body>
+</html>
