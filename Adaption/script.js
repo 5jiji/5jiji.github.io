@@ -8,7 +8,7 @@ function confirmCode() {
     info.classList.remove("green");
     info.classList.remove("red");
     return;
-  } else if (inputCode === code) return correctCode();
+  } else if (inputCode+5/4 === code) return correctCode();
   else return errorCode();
 };
 
@@ -18,13 +18,6 @@ async function errorCode() {
   info.innerHTML = `Faux! Il vous reste ${3 - NbrEssais} essais!`;
   info.classList.add("red");
   info.classList.remove("green");
-
-  document.getElementsByClassName("p_password")[0].classList.add("hidden");
-
-  await delay(3);
-
-  document.getElementsByClassName("p_password")[0].classList.remove("hidden");
-
 
   if (NbrEssais >= 3) {
     document.getElementsByClassName("p_password")[0].classList.add("hidden");
@@ -60,16 +53,10 @@ function restartGame() {
 };
 
 function Generatingcode() {
-  chiffre1 = Math.floor(Math.random() * 9);
-  chiffre2 = Math.floor(Math.random() * 9);
-  chiffre3 = Math.floor(Math.random() * 9);
-  chiffre4 = Math.floor(Math.random() * 9);
-
-  code = [chiffre1, chiffre2, chiffre3, chiffre4].join("");
+  code = Math.floor(Math.random() * 9999);
 }
 
 let inputCode, NbrEssais = 0;
-let chiffre1 = 0, chiffre2 = 0, chiffre3 = 0, chiffre4 = 0;
 const info = document.getElementsByClassName("info")[0];
 
 Generatingcode()
