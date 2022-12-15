@@ -8,7 +8,7 @@ function confirmCode() {
     info.classList.remove("green");
     info.classList.remove("red");
     return;
-  } else if (inputCode === (code+5)/4) return correctCode();
+  } else if (inputCode == (code+5)/4) return correctCode();
   else return errorCode();
 };
 
