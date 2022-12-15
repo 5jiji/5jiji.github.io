@@ -1,18 +1,5 @@
 const delay = (n) => new Promise( r => setTimeout(r, n*1000));
 
-async function Image(color1, trueOrFalse, color2) {
-  document.getElementsByClassName("g")[0].classList.add("hidden");
-  document.getElementsByClassName("r")[0].classList.add("hidden");
-  document.getElementsByClassName("o")[0].classList.add("hidden");
-
-  document.getElementsByClassName(color1)[0].classList.remove("hidden");
-  if (trueOrFalse) {
-    await delay(2)
-    document.getElementsByClassName(color1)[0].classList.add("hidden");
-    document.getElementsByClassName(color2)[0].classList.remove("hidden");
-  }
-}
-
 function confirmCode() {
   inputCode = document.getElementsByClassName('password')[0].value;
 
@@ -31,14 +18,10 @@ async function errorCode() {
   info.innerHTML = `Faux! Il vous reste ${3 - NbrEssais} essais!`;
   info.classList.add("red");
   info.classList.remove("green");
-  
-  Image("r", false);
 
   document.getElementsByClassName("p_password")[0].classList.add("hidden");
 
   await delay(3);
-
-  Image("o", false);
 
   document.getElementsByClassName("p_password")[0].classList.remove("hidden");
 
@@ -49,7 +32,6 @@ async function errorCode() {
     info.innerHTML = "Vous n'avez plus d'essais, Vous avez PERDU !";
 
     await delay(2);
-    Image("r", false);
   };
 };
 
@@ -71,14 +53,10 @@ function restartGame() {
   info.classList.remove("red");
 
   document.getElementsByClassName("code")[0].innerHTML = `Code: ${code}`;
-  info.innerHTML = "Un nouveaux mots de passe a été généré !";
+  info.innerHTML = "Un nouveaux nombre a été généré!";
 
   document.getElementsByClassName("p_password")[0].classList.remove("hidden");
   document.getElementsByClassName("restart")[0].classList.add("hidden");
-
-  document.getElementsByClassName("r")[0].classList.add("hidden");
-  document.getElementsByClassName("g")[0].classList.add("hidden");
-  document.getElementsByClassName("o")[0].classList.remove("hidden");
 };
 
 function Generatingcode() {
@@ -95,7 +73,7 @@ let chiffre1 = 0, chiffre2 = 0, chiffre3 = 0, chiffre4 = 0;
 const info = document.getElementsByClassName("info")[0];
 
 Generatingcode()
-document.getElementsByClassName("code")[0].innerHTML = `Code: ${code}`;
+document.getElementsByClassName("code")[0].innerHTML = `Que donerait x = ${code}?`;
 
 document.getElementsByClassName("restart")[0].addEventListener('click', restartGame);
 document.getElementById("submit").addEventListener('click', confirmCode);
